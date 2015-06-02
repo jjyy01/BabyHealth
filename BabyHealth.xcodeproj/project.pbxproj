@@ -14,6 +14,7 @@
 		CCAF233C1B1D5AE600523273 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCAF233B1B1D5AE600523273 /* Images.xcassets */; };
 		CCAF233F1B1D5AE600523273 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCAF233D1B1D5AE600523273 /* LaunchScreen.xib */; };
 		CCAF234B1B1D5AE600523273 /* BabyHealthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAF234A1B1D5AE600523273 /* BabyHealthTests.m */; };
+		CCAF23561B1D5CA400523273 /* QYViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAF23551B1D5CA400523273 /* QYViewControllerManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		CCAF23441B1D5AE600523273 /* BabyHealthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabyHealthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCAF23491B1D5AE600523273 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCAF234A1B1D5AE600523273 /* BabyHealthTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabyHealthTests.m; sourceTree = "<group>"; };
+		CCAF23541B1D5CA400523273 /* QYViewControllerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYViewControllerManager.h; sourceTree = "<group>"; };
+		CCAF23551B1D5CA400523273 /* QYViewControllerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYViewControllerManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,8 @@
 				CCAF23321B1D5AE600523273 /* AppDelegate.h */,
 				CCAF23331B1D5AE600523273 /* AppDelegate.m */,
 				CCAF23351B1D5AE600523273 /* ViewController.h */,
+				CCAF23541B1D5CA400523273 /* QYViewControllerManager.h */,
+				CCAF23551B1D5CA400523273 /* QYViewControllerManager.m */,
 				CCAF23361B1D5AE600523273 /* ViewController.m */,
 				CCAF23381B1D5AE600523273 /* Main.storyboard */,
 				CCAF233B1B1D5AE600523273 /* Images.xcassets */,
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCAF23561B1D5CA400523273 /* QYViewControllerManager.m in Sources */,
 				CCAF23371B1D5AE600523273 /* ViewController.m in Sources */,
 				CCAF23341B1D5AE600523273 /* AppDelegate.m in Sources */,
 				CCAF23311B1D5AE600523273 /* main.m in Sources */,
