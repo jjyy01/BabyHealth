@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "QYViewControllerManager.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //用代码初始化window
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [QYViewControllerManager getRootViewVC];
+    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 

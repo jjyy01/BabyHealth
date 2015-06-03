@@ -10,38 +10,51 @@
 
 #import "QYGuideVC.h"
 #import "QYMainViewController.h"
-#import "QYAppDelegate.h"
+#import "AppDelegate.h"
+
+#define kAPP_VERSION @"kAPP_VERSION"
 
 @implementation QYViewControllerManager
+
+
+//通过版本号，控制是否显示新特性页面
 
 +(id)getRootViewVC{
     //根据标识返回相应的控制器
     
-    BOOL notFirstLaunch = [[NSUserDefaults standardUserDefaults] boolForKey:@"notFirstLaunch"];
+    //保存的app版本
+    NSString *app = [[NSUserDefaults standardUserDefaults] objectForKey:kAPP_VERSION];
+    
+    //当前app版本
+    NSString *currentAPP = [NSString stringWithFormat:@"%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString*)kCFBundleVersionKey]];
     
     UIStoryboard *sotory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     
-    if (notFirstLaunch) {
-        return [sotory instantiateViewControllerWithIdentifier:@"maintabbar"];
+    
+    if ([app isEqualToString:currentAPP]) {
+        return [sotory instantiateViewControllerWithIdentifier:@"mainvc"];
     }else{
-        return [sotory instantiateInitialViewController];
+        return [sotory instantiateViewControllerWithIdentifier:@"guide"];
     }
+    
 }
 
 
 +(void)guideEnd{
     //引导结束，更改标识位，切换根控制器
+    
+    NSString *currentAPP = [NSString stringWithFormat:@"%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey]];
+    
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    [userDefault setBool:YES forKey:@"notFirstLaunch"];
+    [userDefault setObject:currentAPP forKey:kAPP_VERSION];
     [userDefault synchronize];
     
-    QYAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     
     UIStoryboard *sotory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     
     delegate.window.rootViewController = [sotory instantiateViewControllerWithIdentifier:@"maintabbar"];
     
 }
-
 
 @end
