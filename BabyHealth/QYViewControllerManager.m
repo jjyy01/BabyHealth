@@ -30,7 +30,7 @@
     
     UIStoryboard *sotory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     
-    
+    //如果版本一样，则显示主控制器
     if ([app isEqualToString:currentAPP]) {
         return [sotory instantiateViewControllerWithIdentifier:@"mainvc"];
     }else{
@@ -41,20 +41,16 @@
 
 
 +(void)guideEnd{
-    //引导结束，更改标识位，切换根控制器
-    
+    //引导结束，保存已经使用过的版本
     NSString *currentAPP = [NSString stringWithFormat:@"%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey]];
-    
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     [userDefault setObject:currentAPP forKey:kAPP_VERSION];
     [userDefault synchronize];
     
+    //切换根控制器
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    
     UIStoryboard *sotory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    
-    delegate.window.rootViewController = [sotory instantiateViewControllerWithIdentifier:@"maintabbar"];
-    
+    delegate.window.rootViewController = [sotory instantiateViewControllerWithIdentifier:@"mainvc"];
 }
 
 @end
