@@ -58,14 +58,14 @@
                                             <action selector="searchAction:" destination="GrM-f5-99m" eventType="touchUpInside" id="CL3-ZB-je4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ay6-Ia-ng7">
-                                        <rect key="frame" x="36" y="56" width="249" height="161"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ay6-Ia-ng7">
+                                        <rect key="frame" x="30" y="8" width="249" height="161"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="249" id="ROo-UH-BXd"/>
                                             <constraint firstAttribute="height" constant="161" id="anr-51-5Jc"/>
                                         </constraints>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" image="mike_big.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -81,18 +81,30 @@
                                             <action selector="share:" destination="GrM-f5-99m" eventType="touchUpInside" id="ufk-Yp-MZO"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点话筒说出您的育儿疑惑，如：发烧、感冒、咳嗽等等...，也可以找美食，如鸡蛋羹、三明治..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smx-KW-ynn">
+                                        <rect key="frame" x="39" y="183" width="231" height="63"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="63" id="3GO-gM-DNv"/>
+                                            <constraint firstAttribute="width" constant="231" id="Zaz-V8-aLI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="W1h-2w-ZUC" secondAttribute="centerX" constant="23.5" id="JYW-6m-ELf"/>
-                                    <constraint firstItem="ay6-Ia-ng7" firstAttribute="centerX" secondItem="Q1z-bz-Qkm" secondAttribute="centerX" id="KtX-Ko-13M"/>
+                                    <constraint firstItem="ay6-Ia-ng7" firstAttribute="centerX" secondItem="Q1z-bz-Qkm" secondAttribute="centerX" constant="-6" id="KtX-Ko-13M"/>
                                     <constraint firstItem="ymS-TD-i7l" firstAttribute="leading" secondItem="W1h-2w-ZUC" secondAttribute="trailing" constant="-1" id="OaT-4T-xP3"/>
                                     <constraint firstAttribute="bottom" secondItem="Q1z-bz-Qkm" secondAttribute="bottom" constant="32" id="RRG-ML-WyN"/>
                                     <constraint firstItem="Q1z-bz-Qkm" firstAttribute="top" secondItem="W1h-2w-ZUC" secondAttribute="bottom" constant="41" id="UfD-uL-q8N"/>
                                     <constraint firstAttribute="height" constant="387" id="fba-oi-hjN"/>
+                                    <constraint firstItem="ymS-TD-i7l" firstAttribute="top" secondItem="smx-KW-ynn" secondAttribute="bottom" constant="8" id="hGX-o6-qjf"/>
                                     <constraint firstAttribute="centerX" secondItem="Q1z-bz-Qkm" secondAttribute="centerX" id="oXd-de-59G"/>
                                     <constraint firstItem="W1h-2w-ZUC" firstAttribute="top" secondItem="ymS-TD-i7l" secondAttribute="top" id="r9N-rh-aYJ"/>
-                                    <constraint firstItem="ymS-TD-i7l" firstAttribute="top" secondItem="ay6-Ia-ng7" secondAttribute="bottom" constant="37" id="wdf-EU-hM8"/>
+                                    <constraint firstItem="ymS-TD-i7l" firstAttribute="top" secondItem="ay6-Ia-ng7" secondAttribute="bottom" constant="85" id="wdf-EU-hM8"/>
+                                    <constraint firstAttribute="centerX" secondItem="smx-KW-ynn" secondAttribute="centerX" constant="5.5" id="x3L-ad-rQ7"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -181,6 +193,9 @@
             <point key="canvasLocation" x="316" y="-766"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mike_big.png" width="82" height="150"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

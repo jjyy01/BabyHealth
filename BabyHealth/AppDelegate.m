@@ -8,6 +8,11 @@
 
 #import "AppDelegate.h"
 #import "QYViewControllerManager.h"
+#import <iflyMSC/IFlySpeechUtility.h>
+#import <iflyMSC/IFlySetting.h>
+
+#define APPID_VALUE @"5565df39"
+#define TIMEOUT_VALUE         @"20000"            // timeout      连接超时的时间，以ms为单位
 
 @interface AppDelegate ()
 
@@ -20,9 +25,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    //创建语音配置,appid必须要传入，仅执行一次则可
+    NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@,timeout=%@",APPID_VALUE,TIMEOUT_VALUE];
+    
+    //所有服务启动前，需要确保执行createUtility
+    [IFlySpeechUtility createUtility:initString];
+    
     //用代码初始化window
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [QYViewControllerManager getRootViewVC];
+    
+    
+    
     [self.window makeKeyAndVisible];
     
     return YES;
